@@ -1,3 +1,18 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewBag.Title = "Home Page";
 }
+
+<br /><br /><br /><br />
+
+
+<ul>
+    @foreach(var product in Model)
+    {
+        <li>
+            <pre>
+                @Newtonsoft.Json.JsonConvert.SerializeObject(product, Newtonsoft.Json.Formatting.Indented)
+            </pre>
+        </li>
+    }
+</ul>
